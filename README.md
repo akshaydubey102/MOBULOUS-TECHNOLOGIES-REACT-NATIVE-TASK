@@ -1,97 +1,312 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Assignment
 
-# Getting Started
+A production-ready React Native application built using React Native CLI that demonstrates two key mobile UI patterns:
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+1. Instagram-style Profile Screen with Collapsible Header and Sticky Tabs
+2. YouTube-style Video Feed with Auto-Play Functionality
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Task 1: Instagram Profile Screen
 
-```sh
-# Using npm
-npm start
+* Instagram-inspired profile layout
+* Collapsible profile header
+* Sticky tab navigation
+* Four content tabs:
 
-# OR using Yarn
-yarn start
+  * Posts
+  * Videos
+  * Tagged
+  * About
+* Responsive grid layout
+* Smooth scrolling experience
+* Optimized rendering for better performance
+
+### Task 2: YouTube Feed Screen
+
+* Dynamic video feed using FlatList
+* Auto-play videos based on visibility
+* Pause inactive videos automatically
+* Only one video plays at a time
+* Loading indicators
+* Mute/Unmute functionality
+* Network-aware fallback using NetInfo
+* Optimized scrolling performance
+
+---
+
+## Tech Stack
+
+* React Native CLI
+* React Navigation v7
+* React Native Video
+* React Native Collapsible Tab View
+* React Native Reanimated
+* React Native Gesture Handler
+* React Native Pager View
+* React Native Fast Image
+* React Native NetInfo
+
+---
+
+## Project Structure
+
+```text
+src/
+├── assets/
+│
+├── components/
+│   ├── ProfileHeader/
+│   ├── VideoCard/
+│   ├── TaskCard/
+│   └── Common/
+│
+├── constants/
+│   ├── colors.js
+│   ├── fonts.js
+│   └── dimensions.js
+│
+├── hooks/
+│   ├── useAutoPlayVideo.js
+│   └── useNetworkStatus.js
+│
+├── navigation/
+│   └── AppNavigator.js
+│
+├── screens/
+│   ├── HomeScreen.js
+│   ├── InstagramProfileScreen.js
+│   └── YoutubeFeedScreen.js
+│
+├── services/
+│
+├── utils/
+│
+└── data/
+    ├── profileData.js
+    └── feedData.js
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## Installation
 
-### Android
+### Clone Repository
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```bash
+git clone <repository-url>
+cd project-name
 ```
 
-### iOS
+### Install Dependencies
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+npm install
 ```
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
+## Android Setup
+
+### Clean Android Build
+
+```bash
+cd android
+./gradlew clean
+cd ..
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### Start Metro
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```bash
+npx react-native start
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### Run Android Application
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```bash
+npx react-native run-android
+```
 
-## Step 3: Modify your app
+---
 
-Now that you have successfully run the app, let's make changes!
+## Required Packages
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### Navigation
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+```bash
+npm install @react-navigation/native
+npm install @react-navigation/native-stack
+```
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+### React Native Gesture Handler
 
-## Congratulations! :tada:
+```bash
+npm install react-native-gesture-handler
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+### React Native Reanimated
 
-### Now what?
+```bash
+npm install react-native-reanimated
+npm install react-native-worklets
+```
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### Pager View
 
-# Troubleshooting
+```bash
+npm install react-native-pager-view
+```
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### Collapsible Tabs
 
-# Learn More
+```bash
+npm install react-native-collapsible-tab-view
+```
 
-To learn more about React Native, take a look at the following resources:
+### Video Player
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+```bash
+npm install react-native-video
+```
+
+### Fast Image
+
+```bash
+npm install react-native-fast-image
+```
+
+### Network Monitoring
+
+```bash
+npm install @react-native-community/netinfo
+```
+
+---
+
+## Babel Configuration
+
+```javascript
+module.exports = {
+  presets: ['module:@react-native/babel-preset'],
+  plugins: ['react-native-reanimated/plugin'],
+};
+```
+
+---
+
+## Auto Play Video Logic
+
+The YouTube Feed screen uses:
+
+* FlatList
+* onViewableItemsChanged
+* itemVisiblePercentThreshold = 30
+
+Videos automatically:
+
+* Play when 30% visible
+* Pause when off-screen
+* Maintain smooth scrolling performance
+
+---
+
+## Performance Optimizations
+
+### FlatList
+
+```javascript
+windowSize={5}
+initialNumToRender={3}
+maxToRenderPerBatch={5}
+removeClippedSubviews
+```
+
+### React Optimizations
+
+* React.memo
+* useCallback
+* useMemo
+
+### Media Optimizations
+
+* Fast Image Caching
+* Video Pause/Resume Control
+* Lazy Rendering
+
+---
+
+## Navigation Flow
+
+```text
+Home Screen
+│
+├── Instagram Profile Task
+│      │
+│      └── Instagram Profile Screen
+│
+└── YouTube Feed Task
+       │
+       └── YouTube Feed Screen
+```
+
+---
+
+## Screens
+
+### Home Screen
+
+Provides navigation to:
+
+* Instagram Profile Task
+* YouTube Feed Task
+
+### Instagram Profile Screen
+
+Contains:
+
+* Profile Header
+* Posts Tab
+* Videos Tab
+* Tagged Tab
+* About Tab
+
+### YouTube Feed Screen
+
+Contains:
+
+* Video Feed
+* Auto-Play Videos
+* Description
+* Network-Aware Playback
+
+---
+
+## Compatibility
+
+Tested for:
+
+* Android Emulator
+* Android Physical Device
+* React Native CLI Environment
+
+---
+
+## Future Improvements
+
+* API Integration
+* Pull To Refresh
+* Infinite Pagination
+* Offline Caching
+* Dark Mode Support
+* Video Quality Selection
+
+---
+
+## Author
+
+Akshay Dubey
+
+React Native Developer
