@@ -18,7 +18,7 @@ const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'TaskApp' }} />
         <Stack.Screen
           name="InstagramProfile"
           component={InstagramProfileScreen}

@@ -1,6 +1,12 @@
 
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../navigation';
@@ -14,8 +20,8 @@ const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>React Native Tasks</Text>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>TaskApp</Text>
       <TouchableOpacity
         style={styles.card}
         onPress={() => navigation.navigate('InstagramProfile')}
@@ -28,7 +34,7 @@ const HomeScreen = () => {
       >
         <Text style={styles.cardText}>YouTube Feed Task</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
